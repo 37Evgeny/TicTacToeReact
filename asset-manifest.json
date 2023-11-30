@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/37Evgeny/TicTacToeReact/static/css/main.226d0e22.css",
+    "main.js": "/37Evgeny/TicTacToeReact/static/js/main.cfcbb202.js",
+    "index.html": "/37Evgeny/TicTacToeReact/index.html",
+    "main.226d0e22.css.map": "/37Evgeny/TicTacToeReact/static/css/main.226d0e22.css.map",
+    "main.cfcbb202.js.map": "/37Evgeny/TicTacToeReact/static/js/main.cfcbb202.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.226d0e22.css",
+    "static/js/main.cfcbb202.js"
+  ]
+}
