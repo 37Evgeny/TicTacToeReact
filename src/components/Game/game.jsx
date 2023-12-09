@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './game.css'
 import Board from '../Board/board';
 import {calculateWinner} from '../utils/winner';
+import Step from '../Step/step';
 
 const Game = () => {
 
@@ -25,16 +26,24 @@ const Game = () => {
             <button className='start__btn' onClick={() => setBoard(Array(9).fill(null))}>Новая игра</button>
         )
     }
-
+  
     return (
         <div className='wrapper'>
             {startNewGame()} 
             <Board squares = {board} click = {handleClick}/>
-            <p className='game__info'>
-                {
-                    winner ? 'Победил ' + winner : 'Сейчас ходит ' + ( xIsNext ? 'X' : 'O')
-                }
-            </p>
+            {
+                 board.includes(null)
+                ? <Step winner={winner} xIsNext={xIsNext}/>
+                : <p className='stepXO'>Ничья ХО</p>
+            }
+           
+            {/* <p className='game__info'>
+            {
+             winner ? 'Победил ' + winner : 'Сейчас ходит ' + ( xIsNext ? 'X' : 'O')
+            }
+            {console.log(xIsNext + ' game')}
+            {console.log(winner + ' game')}
+            </p> */}
         </div>
     );
 }
