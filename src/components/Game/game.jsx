@@ -3,12 +3,18 @@ import './game.css'
 import Board from '../Board/board';
 import {calculateWinner} from '../utils/winner';
 import Step from '../Step/step';
+import Toggle from '../Toggle/toggle';
 
 const Game = () => {
 
     const [board, setBoard] = useState(Array(9).fill(null));
     const [xIsNext, setXIsNext] = useState(true);
     const winner = calculateWinner(board);
+    const [theme, setTheme] = useState("dark");
+
+    const switchTheme = () => {
+        setTheme((cur) => (cur === 'light' ? 'dark' : 'light'));
+    };
 
     const handleClick = (index) =>{
         const boardCopy = [...board]
@@ -28,7 +34,8 @@ const Game = () => {
     }
   
     return (
-        <div className='wrapper'>
+        <div className='wrapper' id={theme}>
+            <Toggle switchTheme = {switchTheme}/>
             {startNewGame()} 
             <Board squares = {board} click = {handleClick}/>
             {
@@ -36,14 +43,6 @@ const Game = () => {
                 ? <Step winner={winner} xIsNext={xIsNext}/>
                 : <p className='stepXO'>Ничья ХО</p>
             }
-           
-            {/* <p className='game__info'>
-            {
-             winner ? 'Победил ' + winner : 'Сейчас ходит ' + ( xIsNext ? 'X' : 'O')
-            }
-            {console.log(xIsNext + ' game')}
-            {console.log(winner + ' game')}
-            </p> */}
         </div>
     );
 }

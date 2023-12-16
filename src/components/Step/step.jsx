@@ -1,13 +1,13 @@
 import React from 'react';
 import './step.css'
 
-const Step = ({winner, xIsNext}) => {
+const Step = ({winner, xIsNext, theme}) => {
 
     let stepWinner = winner;
     let stepXIsNext = xIsNext;
     
     return (
-        <p className='game__info'>
+        <p className='game__info' id={theme}>
         {
              stepWinner ? 'Победил ' + stepWinner : 'Сейчас ходит ' + ( stepXIsNext ? 'X' : 'O')
         }

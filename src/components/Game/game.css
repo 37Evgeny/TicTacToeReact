@@ -1,16 +1,27 @@
 .wrapper {
     min-height: 100vh;
     width: 100%;
-    background: #222222;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background: #979797;
+}
+
+#light {
+    background: white;
+    color: black;
+}
+
+#dark {
+    background: #222222;
+    color: white;
 }
 
 .start__btn {
+    font-size: 24px;
     width: 300px;
-    height: 35px;
+    height: 50px;
     margin-bottom: 25px;
     cursor: pointer;
     color: white;
